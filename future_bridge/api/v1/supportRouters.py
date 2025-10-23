@@ -63,6 +63,7 @@ async def store_user_tickets(
 
         result = await support_service.store_user_tickets(payload, browser_info, blob_ids)
 
+        # Response to the User
         return SupportResponse(
             message = "User tickets stored successfully.",
             success = True,
