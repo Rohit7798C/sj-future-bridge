@@ -207,7 +207,7 @@ def extract_user_info_from_token(token: str) -> dict:
     else:
         raise ValueError("Unexpected token validation response format.")
 
-# GET endpoint -> /support/my_tickets
+# GET endpoint -> /support/my_tickets -> To get the Tickets as a User
 @router.get('/my_tickets', tags=["Support"], dependencies=[Depends(jwtBearer())], summary="Fetch user support tickets")
 async def get_user_tickets(
     request: Request, support_service: SupportService = Depends(get_support_service)
